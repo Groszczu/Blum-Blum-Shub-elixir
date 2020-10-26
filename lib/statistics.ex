@@ -20,6 +20,15 @@ defmodule Statistics do
     |> Enum.count(&(&1 == x))
   end
 
+  @doc """
+  Returns maps with sublists lengths
+
+  ## Examples
+
+      iex> Statistics.count_sublists_length([[1, 2, 3], [2, 3], [1], [3, 4], [13, 11]])
+      %{1 => 1, 2 => 3, 3 => 1}
+
+  """
   def count_sublists_length(lists) do
     lists
     |> Enum.frequencies_by(&length/1)
